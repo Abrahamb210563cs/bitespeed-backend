@@ -3,7 +3,7 @@ services:
     name: bitespeed-django
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn your_project.wsgi:application"
+    startCommand: gunicorn bitespeed_pro.wsgi
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: your_project.settings
