@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: bitespeed-django
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn your_project.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: your_project.settings
+      - key: PYTHON_VERSION
+        value: 3.10.12
+      - key: SECRET_KEY
+        value: your-django-secret-key
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: "*"
